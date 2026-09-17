@@ -18,11 +18,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full overflow-x-clip transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 w-full max-w-[100vw] overflow-x-hidden transition-colors duration-300 ${
         scrolled ? 'bg-ink-900/85 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      <nav className="container-px flex items-center justify-between h-20 w-full min-w-0">
+      <nav className="container-px flex items-center justify-between h-20 w-full min-w-0 max-w-full">
         {/* Logo */}
         <a
           href="#home"
