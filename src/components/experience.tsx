@@ -7,7 +7,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="container-px py-16 sm:py-20">
-      <div ref={ref} className="reveal">
+      <div ref={ref as any} className="reveal">
         <p className="eyebrow mb-4">Where I've Worked</p>
         <h2 className="section-heading">
           Experience <span className="text-mint-400">Log</span>

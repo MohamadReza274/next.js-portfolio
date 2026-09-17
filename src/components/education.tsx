@@ -7,7 +7,7 @@ export default function Education() {
 
   return (
     <section id="education" className="container-px py-16 sm:py-20">
-      <div ref={ref} className="reveal">
+      <div ref={ref as any} className="reveal">
         <p className="eyebrow mb-4 justify-center">My Education</p>
         <h2 className="section-heading text-center mx-auto">
           Learning <span className="text-mint-400">Journey</span>

@@ -8,7 +8,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="container-px py-16 sm:py-20">
-      <div ref={ref} className="reveal">
+      <div ref={ref as any} className="reveal">
         <p className="eyebrow mb-4">My Work</p>
         <h2 className="section-heading">
           Featured <span className="text-mint-400">Projects</span>

@@ -302,7 +302,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid #2fd3ae;
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -375,8 +375,10 @@ html.light .card {
 
 /* Glow effect for cards on hover */
 .card-hover-glow:hover {
-  border-color: rgba(79, 227, 194, 0.5);
-  box-shadow: 0 0 20px rgba(79, 227, 194, 0.3), inset 0 0 15px rgba(79, 227, 194, 0.05);
+  border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--primary) 30%, transparent),
+    inset 0 0 15px color-mix(in srgb, var(--primary) 10%, transparent);
 }
 
 /* Scale effect for cards */
@@ -390,9 +392,11 @@ html.light .card {
 }
 
 .icon-hover-glow:hover {
-  border-color: rgba(79, 227, 194, 0.8) !important;
-  box-shadow: 0 0 12px rgba(79, 227, 194, 0.5), inset 0 0 12px rgba(79, 227, 194, 0.2) !important;
-  color: rgba(79, 227, 194, 1) !important;
+  border-color: color-mix(in srgb, var(--primary) 80%, transparent) !important;
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--primary) 50%, transparent),
+    inset 0 0 12px color-mix(in srgb, var(--primary) 20%, transparent) !important;
+  color: var(--primary) !important;
 }
 
 /* Badge glow effect */
@@ -401,8 +405,10 @@ html.light .card {
 }
 
 .badge-hover-glow:hover {
-  box-shadow: 0 0 16px rgba(79, 227, 194, 0.5), inset 0 0 12px rgba(79, 227, 194, 0.15) !important;
-  border-color: rgba(79, 227, 194, 0.6) !important;
+  box-shadow:
+    0 0 16px color-mix(in srgb, var(--primary) 50%, transparent),
+    inset 0 0 12px color-mix(in srgb, var(--primary) 15%, transparent) !important;
+  border-color: color-mix(in srgb, var(--primary) 60%, transparent) !important;
 }
 
 /* Image border glow on hover */
@@ -411,17 +417,17 @@ html.light .card {
 }
 
 .image-border-glow:hover {
-  border-color: rgba(79, 227, 194, 1) !important;
-  box-shadow: 
-    0 0 8px rgba(79, 227, 194, 0.3),
-    0 0 16px rgba(79, 227, 194, 0.4),
-    0 0 24px rgba(79, 227, 194, 0.5),
-    inset 0 0 20px rgba(79, 227, 194, 0.2) !important;
+  border-color: var(--primary) !important;
+  box-shadow:
+    0 0 8px color-mix(in srgb, var(--primary) 30%, transparent),
+    0 0 16px color-mix(in srgb, var(--primary) 40%, transparent),
+    0 0 24px color-mix(in srgb, var(--primary) 50%, transparent),
+    inset 0 0 20px color-mix(in srgb, var(--primary) 20%, transparent) !important;
 }
 
 /* Table content hover */
 .table-content-hover:hover p:last-child {
-  color: rgba(79, 227, 194, 1);
+  color: var(--primary);
 }
 
 /* Contact form styling */
@@ -430,6 +436,8 @@ html.light .card {
 }
 
 .form-hover-glow:hover {
-  border-color: rgba(79, 227, 194, 0.6) !important;
-  box-shadow: 0 0 20px rgba(79, 227, 194, 0.25), inset 0 0 15px rgba(79, 227, 194, 0.05) !important;
+  border-color: color-mix(in srgb, var(--primary) 60%, transparent) !important;
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--primary) 25%, transparent),
+    inset 0 0 15px color-mix(in srgb, var(--primary) 5%, transparent) !important;
 }

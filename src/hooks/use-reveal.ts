@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react'
  * class in index.css) the first time it scrolls into view.
  */
 export default function useReveal(threshold = 0.15) {
-  const ref = useRef(null)
+  const ref = useRef<HTMLElement | HTMLDivElement | null>(null)
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {

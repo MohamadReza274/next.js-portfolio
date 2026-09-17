@@ -58,7 +58,7 @@ export default function Hero() {
             </span>
             <div className="flex items-center gap-3">
               {socials.map(({ label, href, icon }) => {
-                const Icon = ICONS[icon]
+                const Icon = ICONS[icon as keyof typeof ICONS];
                 return (
                   <a
                     key={label}
@@ -97,17 +97,17 @@ export default function Hero() {
             </div>
 
             {/* floating code-tag badges, echoing the reference layout */}
-            <span className="absolute top-2 left-0 sm:-left-2 card w-11 h-11 flex items-center justify-center font-mono text-xs text-mint-400 animate-float float-paused float-on-hover [animation-delay:0.3s] cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_rgba(79,227,194,0.5),inset_0_0_12px_rgba(79,227,194,0.2)] transition-all duration-300">
+            <span className="absolute top-2 left-0 sm:-left-2 card w-11 h-11 flex items-center justify-center font-mono text-xs text-mint-400 animate-float float-paused float-on-hover [animation-delay:0.3s] cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
               {'</>'}
             </span>
-            <span className="absolute top-16 right-0 sm:-right-3 card w-11 h-11 flex items-center justify-center font-mono text-xs text-mint-400 animate-float float-paused float-on-hover [animation-delay:0.9s] cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_rgba(79,227,194,0.5),inset_0_0_12px_rgba(79,227,194,0.2)] transition-all duration-300">
+            <span className="absolute top-16 right-0 sm:-right-3 card w-11 h-11 flex items-center justify-center font-mono text-xs text-mint-400 animate-float float-paused float-on-hover [animation-delay:0.9s] cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
               {'{ }'}
             </span>
 
             {/* floating terminal card */}
-            <div className="absolute -bottom-10 -left-4 sm:-left-8 w-64 sm:w-72 card p-4 animate-float float-paused float-on-hover [animation-delay:1s] z-20 cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_rgba(79,227,194,0.5),inset_0_0_12px_rgba(79,227,194,0.2)] transition-all duration-300">
+            <div className="absolute -bottom-10 -left-4 sm:-left-8 w-64 sm:w-72 card p-4 animate-float float-paused float-on-hover [animation-delay:1s] z-20 cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
               <div className="flex items-center gap-1.5 mb-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#F2564C]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-destructive" />
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
                 <span className="w-2.5 h-2.5 rounded-full bg-mint-500" />
                 <span className="ml-2 font-mono text-[10px] text-paper-500">whoami.js</span>
@@ -129,7 +129,7 @@ export default function Hero() {
             </div>
 
             {profile.available && (
-              <div className="absolute -top-4 -right-4 sm:right-2 flex items-center gap-2 card px-3 py-1.5 z-20 animate-float float-paused float-on-hover cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_rgba(79,227,194,0.5),inset_0_0_12px_rgba(79,227,194,0.2)] transition-all duration-300">
+              <div className="absolute -top-4 -right-4 sm:right-2 flex items-center gap-2 card px-3 py-1.5 z-20 animate-float float-paused float-on-hover cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
                 <span className="relative flex w-2 h-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-mint-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-mint-500" />

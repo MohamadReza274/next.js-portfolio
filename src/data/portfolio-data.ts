@@ -73,21 +73,21 @@ export const education = [
   {
     id: 'matric',
     degree: 'High School Diploma',
-    field: 'Computer Science',
+    field: 'General',
     school: 'Shahrak high school, Ghor, Afghanistan',
     period: '2006 — 2018',
     meta: '890 / 1100 Marks',
     status: 'Completed',
   },
-  {
-    id: 'ics',
-    degree: 'Intermediate in Computer Science',
-    field: 'Pre-Engineering / Computer Science',
-    school: 'Govt. Islamia College, Civil Lines, Lahore',
-    period: '2019 — 2021',
-    meta: '791 / 1100 Marks',
-    status: 'Completed',
-  },
+  // {
+  //   id: 'ics',
+  //   degree: 'Intermediate in Computer Science',
+  //   field: 'Pre-Engineering / Computer Science',
+  //   school: 'Govt. Islamia College, Civil Lines, Lahore',
+  //   period: '2019 — 2021',
+  //   meta: '791 / 1100 Marks',
+  //   status: 'Completed',
+  // },
   {
     id: 'bs-it',
     degree: 'Marticulation',
@@ -105,11 +105,11 @@ export const certifications = [
     title: 'Three Months Freelance Program',
     issuer: 'Acted Organization',
   },
-  {
-    id: 'ibm-py',
-    title: 'Python for Data Science, AI & Development',
-    issuer: 'IBM · Coursera',
-  },
+  // {
+  //   id: 'ibm-py',
+  //   title: 'TypeScript, AI & Development',
+  //   issuer: 'Programming With Mosh · Mosh Hamedani',
+  // },
 ]
 
 export const skills = {
@@ -127,20 +127,20 @@ export const skills = {
 
 export const experience = [
   {
-    id: 'grayphite',
-    company: 'Grayphite — CMIT Internship Program 2025',
-    role: 'Software Engineer Intern',
-    period: 'Jan 2026 — Jun 2026',
+    id: 'afg-job',
+    company: 'Afghan Jobs Platform',
+    role: 'Full Stack Developer',
+    period: 'Jan 2026 — Now',
     points: [
-      'Worked as a Front-End Developer Intern focusing on modern web technologies and responsive UI development.',
-      'Developed and maintained responsive web pages using HTML, CSS, JavaScript, Tailwind CSS, React.js, and Next.js.',
-      'Built multiple mini-projects to strengthen core front-end development concepts.',
-      'Worked on real-world applications including a React-based e-commerce platform and a Lenz Pricing & Product webpage.',
-      'Built and deployed projects using GitHub, Vercel, and Netlify.',
-      'Gained practical experience in component-based architecture and reusable UI development.',
-      'Collaborated in an internship environment focused on clean code practices and version control using GitHub.',
+      'Built a full-stack job platform for Afghanistan that connects job seekers, employers, NGOs, and government organizations in one system.',
+      'Developed core features including user authentication, job posting, application management, profile creation, CV upload, and multilingual support for English, Dari, and Pashto.',
+      'Implemented responsive interfaces with React, TanStack Start, Tailwind CSS, and Shadcn UI while following modern component-based architecture.',
+      'Worked with Better Auth, Prisma, PostgreSQL, TanStack Query, and Zod to build secure, scalable, and validated application flows.',
+      'Designed role-based access patterns and protected routes to support employer, seeker, and admin responsibilities across the platform.',
+      'Used GitHub, Vercel, and modern development workflows to build, review, and iterate on the application as a real-world full-stack project.',
+      'Focused on clean code structure, maintainability, and user experience while improving the platform’s search, filtering, and recruitment workflows.',
     ],
-    tags: ['React.js', 'Next.js', 'Tailwind CSS', 'TypeScript'],
+    tags: ['React.js', 'TanStack Start', 'Tailwind CSS', 'TypeScript', 'Prisma', 'PostgreSQL', 'Better Auth'],
   },
 ]
 
@@ -152,22 +152,22 @@ export const projects = [
     index: '01',
     title: 'Jobs Announcement Platform',
     description:
-      'A React-based online jobs posting built these days — job listings, organization dashboard, and a fully responsive job UIs.',
-    tags: ['React.js', 'Tailwind CSS', 'JavaScript'],
+      'A full-stack Afghan jobs platform that connects job seekers with employers, NGOs, and organizations through searchable listings, profile management, CV uploads, and online applications.',
+    tags: ['React.js', 'TanStack Start', 'Tailwind CSS', 'TypeScript', 'Prisma'],
     type: 'Full-Stack',
     repo: 'https://github.com/MohamadReza274/afghan-jobs.git',
     live: '',
     featured: true,
   },
   {
-    id: 'lenz-pricing',
+    id: 'game-hub',
     index: '02',
-    title: 'Lenz Pricing & Product Webpage',
+    title: 'GameHub',
     description:
-      'A pricing and product showcase page focused on clean layout, clear hierarchy, and a conversion-friendly component structure.',
-    tags: ['React.js', 'Tailwind CSS'],
+      'GameHub is a video game discovery web app designed to help users find new and interesting games to play. It supports searching by platform, genre, and other filters to improve game discovery and browsing.',
+    tags: ['React.js', 'Tailwind CSS', 'API Integration'],
     type: 'Front-End',
-    repo: profile.github,
+    repo: 'https://github.com/MohamadReza274/game-hub-react.git',
     live: '',
     featured: false,
   },

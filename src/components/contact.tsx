@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react'
+import { ChangeEvent, EventHandler, SubmitEvent, useState } from 'react'
 import { contact, profile } from '../data/portfolio-data'
 import { ArrowRightIcon, MailIcon, PhoneIcon, LocationIcon } from './Icons'
 import useReveal from '../hooks/use-reveal'
@@ -16,9 +16,9 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement, HTMLInputElement | HTMLTextAreaElement>) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
   e.preventDefault()
   setError('')
 
@@ -60,7 +60,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="container-px py-16 sm:py-20">
-      <div ref={ref} className="reveal grid lg:grid-cols-[0.9fr,1.1fr] gap-16">
+      <div ref={ref as any} className="reveal grid lg:grid-cols-[0.9fr,1.1fr] gap-16">
         {/* left copy */}
         <div>
           <p className="eyebrow mb-4">Get In Touch</p>

@@ -39,7 +39,7 @@ export default function Footer() {
         {/* Right: Social Links */}
         <div className="flex items-center justify-center sm:justify-end gap-4">
           {socials.map(({ label, href, icon }) => {
-            const Icon = ICONS[icon]
+            const Icon = ICONS[icon as keyof typeof ICONS];
             return (
               <a
                 key={label}

@@ -15,7 +15,7 @@ export default function Skills() {
   return (
     <section id="skills">
       <div className="container-px py-16 sm:py-20">
-        <div ref={ref} className="reveal">
+        <div ref={ref as any} className="reveal">
           <p className="eyebrow mb-4">Skill Set</p>
           <h2 className="section-heading">
             Tools of the <span className="text-mint-400">Trade</span>
