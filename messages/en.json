@@ -1,0 +1,183 @@
+{
+  "hero": {
+    "gretting": "Welcome to my portfolio",
+    "typedRole": [
+      "Front-End Developer",
+      "Software Engineer",
+      "React.js Developer"
+    ]
+  },
+  "profile": {
+    "name": "Mohamad Reza Tabish",
+    "firstName": "Mohamad Reza",
+    "lastName": "Tabish",
+    "role": "Front-End Developer / Software Engineer",
+    "tagline": "I Build Responsive, Scalable, and User-Centric Web Applications with Clean, Maintainable Code.",
+    "location": "Ghor, Afghanistan",
+    "available": "Available"
+  },
+  "socials": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "talk": "Let's Talk"
+  },
+  "about": {
+    "heading": "About Me",
+    "intro": "I'm ",
+    "paragraphs": {
+      "1": "I'm a results-driven Software Engineer with hands-on experience in front-end development and modern JavaScript tooling.",
+      "2": "I care about writing clean, maintainable code and enjoy the process of turning a rough idea into a polished, working interface — then figuring out how to make it a little faster or a little clearer. Currently looking for a Front-End role where I can keep building real products and keep growing as an engineer."
+    },
+    "details": {
+      "name": "Name",
+      "role": "Role",
+      "basedIn": "Based in",
+      "phone": "Phone",
+      "email": "Email",
+      "focus": "Focus"
+    },
+    "values": {
+      "name": "Mohamad Reza Tabish",
+      "role": "Software Engineer",
+      "basedIn": "Ghor, Afghanistan",
+      "phone": "+93780097590",
+      "email": "reza.mohamadi.98115@gmail.com",
+      "focus": "Front-End"
+    }
+  },
+  "education": {
+    "title": "My Education",
+    "heading": "Learning <highlight>Journey</highlight>",
+    "description": "A Steady Academic Path in Information Technology and Computer Science that shaped how I approach building Software today.",
+    "items": {
+      "matric": {
+        "degree": "High School Diploma",
+        "field": "General",
+        "school": "Shahrak High School, Ghor, Afghanistan",
+        "period": "2006 — 2018",
+        "meta": "890 / 1100 Marks",
+        "status": "Completed"
+      },
+      "bsIt": {
+        "degree": "Bachelor's Degree",
+        "field": "Software Engineering",
+        "school": "University of Herat",
+        "period": "2019 — 2023",
+        "meta": "GPA 3.04 / 4.0",
+        "status": "Completed"
+      }
+    }
+  },
+  "certifications": {
+    "heading": "Certifications",
+    "items": {
+      "freelanceP": {
+        "title": "Three Months Freelance Program",
+        "issuer": "Acted Organization"
+      }
+    }
+  },
+  "skills": {
+    "title": "Skill Set",
+    "heading": "Tools of the <highlight>Trade</highlight>",
+    "description": "A Practical Toolkit Built through Internship Work, Self-Directed Projects, and a Couple of very Patient Certifications.",
+    "categories": {
+      "frontend": "Front-End",
+      "tools": "Tools",
+      "soft": "Soft Skills"
+    },
+    "soft": {
+      "problemSolving": "Problem Solving",
+      "communication": "Communication",
+      "teamCollaboration": "Team Collaboration",
+      "adaptability": "Adaptability",
+      "timeManagement": "Time Management",
+      "continuousLearning": "Continuous Learning"
+    }
+  },
+  "experience": {
+    "title": "Where I've Worked",
+    "heading": "Experience <highlight>Log</highlight>",
+    "description": "Real projects, Real Deadlines, Real Code Reviews.",
+    "items": {
+      "afgJob": {
+        "company": "Afghan Jobs Platform",
+        "role": "Full Stack Developer",
+        "period": "Jan 2026 — Now",
+        "points": [
+          "Built a full-stack job platform for Afghanistan that connects job seekers, employers, NGOs, and government organizations in one system.",
+          "Developed core features including user authentication, job posting, application management, profile creation, CV upload, and multilingual support for English, Dari, and Pashto.",
+          "Implemented responsive interfaces with React, TanStack Start, Tailwind CSS, and Shadcn UI while following modern component-based architecture.",
+          "Worked with Better Auth, Prisma, PostgreSQL, TanStack Query, and Zod to build secure, scalable, and validated application flows.",
+          "Designed role-based access patterns and protected routes to support employer, seeker, and admin responsibilities across the platform.",
+          "Used GitHub, Vercel, and modern development workflows to build, review, and iterate on the application as a real-world full-stack project.",
+          "Focused on clean code structure, maintainability, and user experience while improving the platform’s search, filtering, and recruitment workflows."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "My Work",
+    "heading": "Featured <highlight>Projects</highlight>",
+    "description": "Selected Builds from Internship Work and Self-Learning.",
+    "items": {
+      "jobsApp": {
+        "title": "Jobs Announcement Platform",
+        "description": "A full-stack Afghan jobs platform that connects job seekers with employers, NGOs, and organizations through searchable listings, profile management, CV uploads, and online applications.",
+        "type": "Full-Stack"
+      },
+      "gameHub": {
+        "title": "GameHub",
+        "description": "GameHub is a video game discovery web app designed to help users find new and interesting games to play. It supports searching by platform, genre, and other filters to improve game discovery and browsing.",
+        "type": "Front-End"
+      },
+      "more": {
+        "title": "More on GitHub",
+        "description": "Mini-projects built while sharpening core front-end fundamentals — components, layouts, and small JavaScript utilities.",
+        "type": "Self-Learning"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "heading": "Let's Build Something.",
+    "sub": "Have a Role, a Project, or just want to say Hi? My Inbox is Open."
+  },
+
+  "contactForm": {
+    "name": "NAME",
+    "namePlaceholder": "Your name",
+    "email": "EMAIL",
+    "emailPlaceholder": "you@gmail.com",
+    "message": "MESSAGE",
+    "messagePlaceholder": "Tell me about the role or project...",
+    "btnText": "Send Message",
+    "helperMessage": "Your message will be sent directly to my email. I typically respond within 24 hours.",
+    "error": "Error sending message. Please try again later."
+  },
+  "footer": {
+    "message": "Crafting digital experiences with code & craft.",
+    "copyright": "© {year} {name}. Built with Next.js & Tailwind CSS."
+  },
+  "common": {
+    "exploreworks": "Explore My Work",
+    "findmeon": "Find Me On",
+
+    "available": "Available",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "downloadResume": "Download Resume",
+    "sendEmail": "Send Email",
+    "learnMore": "Learn More"
+  }
+}

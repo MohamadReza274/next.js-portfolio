@@ -1,19 +1,26 @@
-import Image from 'next/image'
-import { navLinks, profile, socials } from '../data/portfolio-data'
-import { GithubIcon, LinkedinIcon, MailIcon } from './Icons'
+"use client";
+import Image from "next/image";
+import { GithubIcon, LinkedinIcon, MailIcon } from "./Icons";
+import { useTranslations } from "next-intl";
+import useData from "@/hooks/use-data";
 
-const ICONS = { github: GithubIcon, linkedin: LinkedinIcon, mail: MailIcon }
+const ICONS = { github: GithubIcon, linkedin: LinkedinIcon, mail: MailIcon };
 
 export default function Footer() {
-  const year = new Date().getFullYear()
-
+  const { navLinks, profile, socials } = useData();
+  const year = new Date().getFullYear();
+  const t = useTranslations("footer");
   return (
     <footer className="relative border-t border-ink-border overflow-hidden">
       <div className="container-px py-16 sm:py-20 relative grid sm:grid-cols-3 gap-16 sm:gap-24 items-center">
         {/* Left: Navigation */}
         <nav className="grid grid-cols-2 gap-x-8 gap-y-4 font-mono text-sm">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-paper-500 hover:text-mint-400 transition-colors">
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-paper-500 hover:text-mint-400 transition-colors"
+            >
               {link.label}
             </a>
           ))}
@@ -21,19 +28,20 @@ export default function Footer() {
 
         {/* Center: Profile Info */}
         <div className="flex flex-col items-center text-center">
-          <Image width={80}
-          height={80}
+          <Image
+            width={80}
+            height={80}
             src={profile.avatar}
             alt={profile.name}
             className="w-16 h-16 rounded-2xl object-cover object-center border-2 border-mint-400 shadow-lg shadow-mint-500/20 mb-4"
           />
-          <p className="font-display text-lg font-semibold text-paper-100">{profile.name}</p>
+          <p className="font-display text-lg font-semibold text-paper-100">
+            {profile.name}
+          </p>
           <p className="font-mono text-xs text-mint-400 uppercase tracking-wide mt-1">
             {profile.role}
           </p>
-          <p className="text-paper-500 text-sm italic mt-2">
-            "Crafting digital experiences with code &amp; craft."
-          </p>
+          <p className="text-paper-500 text-sm italic mt-2">{t("message")}</p>
         </div>
 
         {/* Right: Social Links */}
@@ -44,20 +52,20 @@ export default function Footer() {
               <a
                 key={label}
                 href={href}
-                target={href.startsWith('http') ? '_blank' : undefined}
+                target={href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
                 aria-label={label}
                 className="w-10 h-10 rounded-full border border-ink-border flex items-center justify-center text-paper-300 hover:text-mint-400 hover:border-mint-400 transition-all duration-300"
               >
                 <Icon />
               </a>
-            )
+            );
           })}
         </div>
       </div>
 
       <p className="relative container-px pb-8 text-center font-mono text-xs text-paper-500">
-        © {year} {profile.name}. Built with Next.js &amp; Tailwind CSS.
+        {t("copyright", { name: profile.name, year })}
       </p>
 
       {/* big background name */}
@@ -65,8 +73,8 @@ export default function Footer() {
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-bold text-[20vw] leading-none text-paper-100/[0.02] whitespace-nowrap"
       >
-        TABISH
+        {profile.lastName.toLocaleUpperCase()}
       </div>
     </footer>
-  )
+  );
 }

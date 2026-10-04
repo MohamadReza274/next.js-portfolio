@@ -1,37 +1,50 @@
-import Image from 'next/image'
-import { profile, socials, stack } from '../data/portfolio-data'
-import { ArrowRightIcon, DownloadIcon, GithubIcon, LinkedinIcon, MailIcon } from './Icons'
-import TypedRole from './typed-roles'
+"use client";
+import Image from "next/image";
+import {
+  ArrowRightIcon,
+  DownloadIcon,
+  GithubIcon,
+  LinkedinIcon,
+  MailIcon,
+} from "./Icons";
+import TypedRole from "./typed-roles";
+import { useTranslations } from "next-intl";
+import useData from "@/hooks/use-data";
 
-const ICONS = { github: GithubIcon, linkedin: LinkedinIcon, mail: MailIcon }
+const ICONS = { github: GithubIcon, linkedin: LinkedinIcon, mail: MailIcon };
 
 export default function Hero() {
+  const { profile, socials, stack } = useData();
+  const t = useTranslations("profile");
+  const c = useTranslations("common");
+  const hero = useTranslations("hero");
+
   return (
     <section
       id="home"
       className="relative pt-32 pb-16 sm:pb-20 overflow-hidden"
     >
       {/* ambient glow */}
-      <div className="pointer-events-none absolute -top-40 right-0 w-[36rem] h-[36rem] rounded-full bg-mint-500/10 blur-[120px]" />
-      <div className="pointer-events-none absolute top-40 -left-32 w-[24rem] h-[24rem] rounded-full bg-amber-500/5 blur-[100px]" />
+      <div className="pointer-events-none absolute -top-40 end-0 w-[36rem] h-[36rem] rounded-full bg-mint-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute top-40 -start-32 w-[24rem] h-[24rem] rounded-full bg-amber-500/5 blur-[100px]" />
 
       <div className="container-px relative grid lg:grid-cols-[1.1fr,0.9fr] gap-16 items-center">
         {/* Left: copy */}
         <div className="animate-fade-up">
-          <p className="eyebrow mb-6">Welcome to my portfolio</p>
+          <p className="eyebrow mb-6">{hero("gretting")}</p>
 
           <h1 className="font-display font-semibold text-[2.6rem] leading-[1.05] sm:text-6xl md:text-[4.2rem] text-paper-100 tracking-tight">
-            Mohammad Reza
+            {t("firstName")}
             <br />
             <span className="bg-gradient-to-r from-mint-400 to-mint-600 bg-clip-text text-transparent">
-              Tabish
+              {t("lastName")}
             </span>
           </h1>
 
           <div className="mt-6 h-8 font-mono text-lg sm:text-xl">
-            <span className="text-paper-500">{'<'} </span>
+            <span className="text-paper-500">{"<"} </span>
             <TypedRole />
-            <span className="text-paper-500"> {'/>'}</span>
+            <span className="text-paper-500"> {"/>"}</span>
           </div>
 
           <p className="section-sub">{profile.tagline}</p>
@@ -41,20 +54,25 @@ export default function Hero() {
               href="#projects"
               className="inline-flex items-center gap-2 rounded-full bg-mint-500 text-ink-950 font-semibold px-6 py-3 text-sm shadow-glow hover:bg-mint-400 transition-colors"
             >
-              Explore My Work <ArrowRightIcon width={16} height={16} />
+              {c("exploreworks")}{" "}
+              <ArrowRightIcon
+                className="rtl:rotate-180"
+                width={16}
+                height={16}
+              />
             </a>
             <a
               href={profile.resumeUrl}
               download
               className="inline-flex items-center gap-2 rounded-full border border-ink-border/14 text-paper-100 px-6 py-3 text-sm hover:border-mint-500/50 hover:text-mint-400 transition-colors"
             >
-              Download CV <DownloadIcon width={16} height={16} />
+              {c("downloadResume")} <DownloadIcon width={16} height={16} />
             </a>
           </div>
 
           <div className="mt-12 flex items-center gap-5">
             <span className="font-mono text-xs tracking-[0.2em] text-paper-500 uppercase">
-              Find Me On
+              {c("findmeon")}
             </span>
             <div className="flex items-center gap-3">
               {socials.map(({ label, href, icon }) => {
@@ -63,14 +81,14 @@ export default function Hero() {
                   <a
                     key={label}
                     href={href}
-                    target={href.startsWith('http') ? '_blank' : undefined}
+                    target={href.startsWith("http") ? "_blank" : undefined}
                     rel="noreferrer"
                     aria-label={label}
                     className="w-10 h-10 rounded-full border border-ink-border/14 flex items-center justify-center text-paper-300 hover:text-mint-400 transition-all duration-300 icon-hover-glow"
                   >
                     <Icon />
                   </a>
-                )
+                );
               })}
             </div>
           </div>
@@ -97,44 +115,48 @@ export default function Hero() {
             </div>
 
             {/* floating code-tag badges, echoing the reference layout */}
-            <span className="absolute top-2 left-0 sm:-left-2 card w-11 h-11 flex items-center justify-center font-mono text-xs text-mint-400 animate-float float-paused float-on-hover [animation-delay:0.3s] cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
-              {'</>'}
+            <span className="absolute top-2 start-0 sm:-start-2 card w-11 h-11 flex items-center justify-center font-mono text-xs text-mint-400 animate-float float-paused float-on-hover [animation-delay:0.3s] cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
+              {"</>"}
             </span>
-            <span className="absolute top-16 right-0 sm:-right-3 card w-11 h-11 flex items-center justify-center font-mono text-xs text-mint-400 animate-float float-paused float-on-hover [animation-delay:0.9s] cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
-              {'{ }'}
+            <span className="absolute top-16 end-0 sm:-end-3 card w-11 h-11 flex items-center justify-center font-mono text-xs text-mint-400 animate-float float-paused float-on-hover [animation-delay:0.9s] cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
+              {"{ }"}
             </span>
 
             {/* floating terminal card */}
-            <div className="absolute -bottom-10 -left-4 sm:-left-8 w-64 sm:w-72 card p-4 animate-float float-paused float-on-hover [animation-delay:1s] z-20 cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
+            <div className="absolute -bottom-10 -start-4 sm:-start-8 w-64 sm:w-72 card p-4 animate-float float-paused float-on-hover [animation-delay:1s] z-20 cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
               <div className="flex items-center gap-1.5 mb-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-destructive" />
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
                 <span className="w-2.5 h-2.5 rounded-full bg-mint-500" />
-                <span className="ml-2 font-mono text-[10px] text-paper-500">whoami.js</span>
+                <span className="ms-2 font-mono text-[10px] text-paper-500">
+                  whoami.js
+                </span>
               </div>
               <p className="font-mono text-xs leading-relaxed text-paper-300">
-                <span className="text-amber-400">const</span> dev = {'{'}
+                <span className="text-amber-400">const</span> dev = {"{"}
                 <br />
-                &nbsp;&nbsp;name:{' '}
+                &nbsp;&nbsp;name:{" "}
                 <span className="text-mint-400">"Mohamad Reza"</span>,
                 <br />
-                &nbsp;&nbsp;stack:{' '}
+                &nbsp;&nbsp;stack:{" "}
                 <span className="text-mint-400">"React / Next.js"</span>,
                 <br />
-                &nbsp;&nbsp;status:{' '}
+                &nbsp;&nbsp;status:{" "}
                 <span className="text-mint-400">"Open to Work"</span>
                 <br />
-                {'}'}
+                {"}"}
               </p>
             </div>
 
             {profile.available && (
-              <div className="absolute -top-4 -right-4 sm:right-2 flex items-center gap-2 card px-3 py-1.5 z-20 animate-float float-paused float-on-hover cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
+              <div className="absolute -top-4 -end-4 sm:end-2 flex items-center gap-2 card px-3 py-1.5 z-20 animate-float float-paused float-on-hover cursor-pointer hover:border-mint-400 hover:shadow-[0_0_12px_var(--primary),inset_0_0_12px_color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all duration-300">
                 <span className="relative flex w-2 h-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-mint-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-mint-500" />
                 </span>
-                <span className="font-mono text-[11px] text-paper-300">Available for work</span>
+                <span className="font-mono text-[11px] text-paper-300">
+                  Available for work
+                </span>
               </div>
             )}
           </div>
@@ -145,7 +167,10 @@ export default function Hero() {
       <div className="mt-24 border-y border-ink-border/14 py-5 overflow-hidden marquee-container">
         <div className="flex w-max animate-marquee gap-10 font-mono text-sm text-paper-500">
           {[...stack, ...stack].map((tech, i) => (
-            <span key={`${tech}-${i}`} className="flex items-center gap-10 shrink-0">
+            <span
+              key={`${tech}-${i}`}
+              className="flex items-center gap-10 shrink-0"
+            >
               {tech}
               <span className="text-mint-500/50">◆</span>
             </span>
@@ -153,5 +178,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

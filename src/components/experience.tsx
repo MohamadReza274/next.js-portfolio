@@ -1,18 +1,25 @@
-"use client"
-import { experience } from '../data/portfolio-data'
-import useReveal from '../hooks/use-reveal'
+"use client";
+import useData from "@/hooks/use-data";
+import useReveal from "../hooks/use-reveal";
+import { useTranslations } from "next-intl";
 
 export default function Experience() {
-  const ref = useReveal()
+  const ref = useReveal();
+  const { experience } = useData();
+  const exp = useTranslations("experience");
 
   return (
     <section id="experience" className="container-px py-16 sm:py-20">
       <div ref={ref as any} className="reveal">
-        <p className="eyebrow mb-4">Where I've Worked</p>
+        <p className="eyebrow mb-4">{exp("title")}</p>
         <h2 className="section-heading">
-          Experience <span className="text-mint-400">Log</span>
+          {exp.rich("heading", {
+            highlight: (chunks) => (
+              <span className="text-mint-400">{chunks}</span>
+            ),
+          })}
         </h2>
-        <p className="section-sub">Real projects, Real Deadlines, Real Code Reviews.</p>
+        <p className="section-sub">{exp("description")}</p>
 
         <div className="mt-14 space-y-6">
           {experience.map((job) => (
@@ -34,7 +41,10 @@ export default function Experience() {
 
               <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
                 {job.points.map((point, i) => (
-                  <li key={i} className="flex items-start gap-3 text-paper-300 text-sm leading-relaxed">
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-paper-300 text-sm leading-relaxed"
+                  >
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-mint-500 shrink-0" />
                     {point}
                   </li>
@@ -56,5 +66,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }

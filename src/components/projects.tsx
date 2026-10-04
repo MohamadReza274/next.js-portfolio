@@ -1,19 +1,26 @@
-"use client"
-import { projects } from '../data/portfolio-data'
-import { ArrowUpRightIcon, GithubIcon } from './Icons'
-import useReveal from '../hooks/use-reveal'
+"use client";
+import { ArrowUpRightIcon, GithubIcon } from "./Icons";
+import useReveal from "../hooks/use-reveal";
+import useData from "@/hooks/use-data";
+import { useTranslations } from "next-intl";
 
 export default function Projects() {
-  const ref = useReveal()
+  const ref = useReveal();
+  const { projects } = useData();
+  const p = useTranslations("projects");
 
   return (
     <section id="projects" className="container-px py-16 sm:py-20">
       <div ref={ref as any} className="reveal">
-        <p className="eyebrow mb-4">My Work</p>
+        <p className="eyebrow mb-4">{p("title")}</p>
         <h2 className="section-heading">
-          Featured <span className="text-mint-400">Projects</span>
+          {p.rich("heading", {
+            highlight: (chunks) => (
+              <span className="text-mint-400">{chunks}</span>
+            ),
+          })}
         </h2>
-        <p className="section-sub">Selected Builds from Internship Work and Self-Learning .</p>
+        <p className="section-sub">{p("description")}</p>
 
         <div className="mt-16 divide-y divide-ink-border border-y border-ink-border">
           {projects.map((project) => (
@@ -21,7 +28,9 @@ export default function Projects() {
               key={project.id}
               className="group grid sm:grid-cols-[auto,1fr,auto] items-center gap-6 py-8"
             >
-              <span className="font-mono text-sm text-paper-500">{project.index}</span>
+              <span className="font-mono text-sm text-paper-500">
+                {project.index}
+              </span>
 
               <div>
                 <div className="flex flex-wrap items-center gap-3">
@@ -34,7 +43,9 @@ export default function Projects() {
                     </span>
                   )}
                 </div>
-                <p className="text-paper-500 text-sm mt-2 max-w-xl">{project.description}</p>
+                <p className="text-paper-500 text-sm mt-2 max-w-xl">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap items-center gap-3 mt-3 font-mono text-xs text-paper-500">
                   <span className="text-mint-400">{project.type}</span>
                   {project.tags.map((tag) => (
@@ -67,9 +78,8 @@ export default function Projects() {
           ))}
         </div>
 
-        <p className="mt-6 text-xs text-paper-500 font-mono">
-        </p>
+        <p className="mt-6 text-xs text-paper-500 font-mono"></p>
       </div>
     </section>
-  )
+  );
 }
