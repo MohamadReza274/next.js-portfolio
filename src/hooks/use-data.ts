@@ -172,11 +172,10 @@ const useData = () => {
       {
         id: "game-hub",
         index: "02",
-        title: "GameHub",
-        description:
-          "GameHub is a video game discovery web app designed to help users find new and interesting games to play. It supports searching by platform, genre, and other filters to improve game discovery and browsing.",
+        title: prj("items.gameHub.title"),
+        description: prj("items.gameHub.description"),
         tags: ["React.js", "Tailwind CSS", "API Integration"],
-        type: "Front-End",
+        type: prj("items.gameHub.type"),
         repo: "https://github.com/MohamadReza274/game-hub-react.git",
         live: "",
         featured: false,
@@ -184,9 +183,8 @@ const useData = () => {
       {
         id: "more",
         index: "03",
-        title: "More on GitHub",
-        description:
-          "Mini-projects built while sharpening core front-end fundamentals — components, layouts, and small JavaScript utilities.",
+        title: prj("items.more.title"),
+        description: prj("items.more.description"),
         tags: [
           "HTML",
           "CSS",
@@ -194,9 +192,10 @@ const useData = () => {
           "Tailwind CSS",
           "React.js",
           "Next.js",
+          "Tanstack",
           "GitHub",
         ],
-        type: "Self-Learning",
+        type: prj("items.more.type"),
         repo: github,
         live: "",
         featured: false,
